@@ -1,0 +1,125 @@
+#servicemain{
+    background-image: url(../Picture/office.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.services-section {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(0deg, rgb(83, 83, 83) 0.5%, rgba(0, 0, 0, 0) 100%);
+}
+
+.services-section h2 {
+    color: #DED6CB;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1400px;
+    margin: auto;
+    width: 90%;
+    transition: opacity 0.5s ease-out;
+}
+
+.service-box {
+    background: rgba(255, 255, 255, 0.3); /* Semi-transparent */
+    backdrop-filter: blur(10px); /* Blur effect */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    cursor: pointer;
+}
+
+.service-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.service-box h3 {
+    color: #302C21;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.service-box p {
+    color: #302C21;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.toggle-btn,
+#backBtn {
+    background-color: #814B23;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-btn:hover,
+#backBtn:hover {
+    background-color: #302C21;
+}
+
+.expanded-view {
+    display: none;
+    background: #DED6CB;
+    padding: 50px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 90%;
+    margin: auto;
+    transform: scale(0.8);
+    opacity: 0;
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+.expanded-view.active {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.expanded-content img {
+    width: 50%;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.expanded-content h3 {
+    font-size: 2rem;
+    color: #302C21;
+}
+
+.expanded-content p {
+    font-size: 1.2rem;
+    color: #302C21;
+    line-height: 1.6;
+}
+
+#backBtn {
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .services-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
