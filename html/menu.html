@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Vitaly Tea</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/loading.css">
+</head>
+<body>
+    <div id="loading-screen">
+        <div class="loader-container">
+            <div class="rotating-container">
+                <div class="leaf leaf1"><img src="../Picture/leafloading.png" alt="Leaf"></div>
+                <div class="leaf leaf2"><img src="../Picture/leafloading.png" alt="Leaf"></div>
+                <div class="leaf leaf3"><img src="../Picture/leafloading.png" alt="Leaf"></div>
+                <div class="leaf leaf4"><img src="../Picture/leafloading.png" alt="Leaf"></div>
+            </div>
+            <img src="../Picture/Logo.png" alt="Logo" class="logo">
+            <p class="brewing-text">Brewing...</p>
+        </div>
+    </div>
+    <nav>
+        <ul class="sidebar">
+            <li onclick="hideSidebar()"><a href="#"><img src="../Picture/close_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg" alt="close"></a></li>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="order.html">Order</a></li>
+        </ul>
+    
+        <ul>
+            <li><a href="#">Vitaly Tea</a></li>
+            <li class="hideOnMobile"><a href="../index.html">Home</a></li>
+            <li class="hideOnMobile"><a href="about.html">About</a></li>
+            <li class="hideOnMobile"><a href="services.html">Services</a></li>
+            <li class="hideOnMobile"><a href="menu.html">Menu</a></li>
+            <li class="hideOnMobile"><a href="contact.html">Contact</a></li>
+            <li class="hideOnMobile"><a href="order.html">Order</a></li>
+            <li class="menuButton" onclick="showSidebar()"><a href="#"><img src="../Picture/menu_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg" alt="menu"></a></li>
+        </ul>
+    </nav>
+
+    <main>  
+        <section class="menu">
+            <h1>Menu</h1>
+
+            <h2>Warm Drinks</h2>
+            <div class="menu-grid">
+
+                <div class="menu-item">
+                    <img src="/Picture/esspresso.jpg" alt="Espresso">
+                    <div class="overlay">
+                        <h3>Esspresso</h3>
+                        <p>A refreshing blend of green tea & honey</p>
+                        <p class="price">₱170</p>
+                        <button onclick="addToCart('Espresso', 100)">BUY</button>
+                        
+                    </div>
+                    
+                </div>
+
+                <div class="menu-item">
+                    <img src="/Picture/latte.jpg" alt="Latte">
+                    <div class="overlay">
+                        <h3>Esspresso</h3>
+                        <p>A refreshing blend of green tea & honey</p>
+                        <p class="price">₱170</p>
+                        <button onclick="addToCart('Latte', 70)">BUY</button>
+                        
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="/Picture/cappuccino.webp" alt="Cappuccino">
+                    <div class="overlay">
+                        <h3>Esspresso</h3>
+                        <p>A refreshing blend of green tea & honey</p>
+                        <p class="price">₱170</p>
+                        <button onclick="addToCart('Cappuccino', 80)">BUY</button>
+                        
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="/Picture/cocoa.jpg" alt="Cocoa">
+                    <div class="overlay">
+                        <h3>Esspresso</h3>
+                        <p>A refreshing blend of green tea & honey</p>
+                        <p class="price">₱170</p>
+                        <button onclick="addToCart('Cocoa', 70)">BUY</button>
+                        
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="/Picture/flat white.jpg" alt="Flat White">
+                    <div class="overlay">
+                        <h3>Esspresso</h3>
+                        <p>A refreshing blend of green tea & honey</p>
+                        <p class="price">₱170</p>
+                        <button onclick="addToCart('Flat White', 70)">BUY</button>
+                    </div>
+                </div>
+
+            </div>
+            
+            <h2>Cold Drinks</h2>
+            <div class="menu-grid">
+
+                <div class="menu-item">
+                    <img src="../Picture/iced-latte.jpg" alt="Iced Latte">
+                    <div class="overlay">
+                        <h3>Iced Latte</h3>
+                        <p>A refreshing blend of green tea & honey</p>
+                        <p class="price">₱90</p>
+                        <button onclick="addToCart('Iced Latte', 90)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="../Picture/thai-iced-tea.jpg" alt="Thai Iced Tea">
+                    <div class="overlay">
+                        <h3>Iced Latte</h3>
+                        <p>A refreshing blend of green tea & honey</p>
+                        <p class="price">₱90</p>
+                        <button onclick="addToCart('Thai Iced Tea', 100)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="../Picture/milk-tea.jpg" alt="Milk Tea">
+                    <div class="overlay">
+                        <h3>Iced Latte</h3>
+                        <p>A refreshing blend of green tea & honey</p>
+                        <p class="price">₱90</p>
+                        <button onclick="addToCart('Milk Tea', 85)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="../Picture/matcha-latte.jpg" alt="Matcha Latte">
+                    <div class="overlay">
+                        <h3>Iced Latte</h3>
+                        <p>A refreshing blend of green tea & honey</p>
+                        <p class="price">₱90</p>
+                        <button onclick="addToCart('Matcha Latte', 70)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="../Picture/iced-cappuccino.jpg" alt="Iced Cappuccino">
+                    <div class="overlay">
+                        <h3>Iced Latte</h3>
+                        <p>A refreshing blend of green tea & honey</p>
+                        <p class="price">₱90</p>
+                        <button onclick="addToCart('Iced Cappuccino', 95)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="../Picture/strawberry-green-tea.jpg" alt="Strawberry Green Tea">
+                    <div class="overlay">
+                        <h3>Iced Latte</h3>
+                        <p>A refreshing blend of green tea & honey</p>
+                        <p class="price">₱90</p>
+                        <button onclick="addToCart('Strawberry Green Tea', 90)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="../Picture/passion-fruit-tea.jpg" alt="Passion Fruit Tea">
+                    <div class="overlay">
+                        <h3>Iced Latte</h3>
+                        <p>A refreshing blend of green tea & honey</p>
+                        <p class="price">₱90</p>
+                        <button onclick="addToCart('Passion Fruit Tea', 70)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Sandwiches</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="../Picture/ham-cheese.jpg" alt="Ham & Cheese">
+                    <div class="overlay">
+                        <h2>Ham & Cheese</h2>
+                        <p>A refreshing blend of green tea & honey</p>
+                        <p class="price">₱100</p>
+                        <button onclick="addToCart('Ham & Cheese', 100)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="../Picture/egg-salad.jpg" alt="Egg Salad">
+                    <div class="overlay">
+                        <h2>Ham & Cheese</h2>
+                        <p>A refreshing blend of green tea & honey</p>
+                        <p class="price">₱100</p>
+                        <button onclick="addToCart('Egg Salad', 100)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="../Picture/tuna-sandwich.jpg" alt="Tuna Sandwich">
+                    <div class="overlay">
+                        <h2>Ham & Cheese</h2>
+                        <p>A refreshing blend of green tea & honey</p>
+                        <p class="price">₱100</p>
+                        <button onclick="addToCart('Tuna Sandwich', 100)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="../Picture/chicken-sandwich.jpg" alt="Chicken Sandwich">
+                    <div class="overlay">
+                        <h2>Ham & Cheese</h2>
+                        <p>A refreshing blend of green tea & honey</p>
+                        <p class="price">₱100</p>
+                        <button onclick="addToCart('Chicken Sandwich', 100)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="../Picture/grilled-cheese.jpg" alt="Grilled Cheese">
+                    <div class="overlay">
+                        <h2>Ham & Cheese</h2>
+                        <p>A refreshing blend of green tea & honey</p>
+                        <p class="price">₱100</p>
+                        <button onclick="addToCart('Grilled Cheese', 100)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="../Picture/blt.jpg" alt="BLT">
+                    <div class="overlay">
+                        <h2>Ham & Cheese</h2>
+                        <p>A refreshing blend of green tea & honey</p>
+                        <p class="price">₱100</p>
+                        <button onclick="addToCart('BLT', 100)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="../Picture/turkey-club.jpg" alt="Turkey Club">
+                    <div class="overlay">
+                        <h2>Ham & Cheese</h2>
+                        <p>A refreshing blend of green tea & honey</p>
+                        <p class="price">₱100</p>
+                        <button onclick="addToCart('Turkey Club', 100)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="../Picture/beef-pastrami.jpg" alt="Beef Pastrami">
+                    <div class="overlay">
+                        <h2>Ham & Cheese</h2>
+                        <p>A refreshing blend of green tea & honey</p>
+                        <p class="price">₱100</p>
+                        <button onclick="addToCart('Beef Pastrami', 100)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="../Picture/philly-cheesesteak.jpg" alt="Philly Cheesesteak">
+                    <div class="overlay">
+                        <h2>Ham & Cheese</h2>
+                        <p>A refreshing blend of green tea & honey</p>
+                        <p class="price">₱100</p>
+                        <button onclick="addToCart('Philly Cheesesteak', 100)">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="../Picture/smoked-salmon.jpg" alt="Smoked Salmon">
+                    <div class="overlay">
+                        <h2>Ham & Cheese</h2>
+                        <p>A refreshing blend of green tea & honey</p>
+                        <p class="price">₱100</p>
+                        <button onclick="addToCart('Smoked Salmon', 100)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cart-container" id="cart-container">
+            <div class="cart">
+                <h2>Order Summary</h2>
+                <ul id="cart-items"></ul>
+                <p>Total: ₱<span id="total">0.00</span></p>
+                <button onclick="checkout()">Checkout</button>
+            </div>
+        </section>
+</main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="box logo">
+                <img src="../Picture/Logo.png" alt="">
+            </div>
+            <div class="box about">
+                <h1>About</h1>
+                <p>Vitaly Tea offers a refreshing experience with every sip, using only the freshest ingredients to create extraordinary flavors.</p>
+            </div>
+            <div class="box links">
+                <h1>Links</h1>
+                <li class="hideOnMobile"><a href="../index.html">Home</a><a href="about.html">&nbsp;&nbsp;&nbsp;About</a></li>
+                <li class="hideOnMobile"><a href="services.html">Services</a><a href="menu.html">Menu</a></li>
+                <li class="hideOnMobile"><a href="contact.html">Contact</a><a href="order.html">Order</a></li>
+            </div>
+            <div class="box contact">
+                <h1>Contact</h1>
+                <p>vitality@gmail.com</p>
+                <p>+63 9123 456 789</p>
+                <p>España, Manila</p>
+            </div>
+        </div>
+        <p class="footer-copy">&copy; 2025 Vitaly Tea. All rights reserved.</p>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

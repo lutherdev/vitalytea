@@ -1,0 +1,223 @@
+#servicemain{
+    background-image: url(../Picture/office.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.services-section {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    text-align: center;
+    padding: 50px 20px;
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.services-section h2 {
+    color: #DED6CB;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.services-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+    width: 800px;
+    height: 500px;
+    transition: 0.25s;
+    margin: auto;
+}
+
+.service-box {
+    position: relative;
+    background: var(--img);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: 0.25s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    filter: grayscale(0) brightness(1.1);
+    /*rgba(255, 255, 255, 0.3);  Semi-transparent */
+    /*backdrop-filter: blur(10px); Blur effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    cursor: pointer;
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 5%;
+
+    z-index: 1;
+}
+
+.services-grid:hover .service-box{
+    filter: grayscale(1);
+}
+
+.services-grid .service-box:hover{
+    filter: grayscale(0) brightness(1);
+}
+
+.services-grid:has(.service-box:nth-child(1):hover){
+    grid-template-columns: 2fr 0.5fr 0.5fr 0.5fr;
+}
+
+.services-grid:has(.service-box:nth-child(2):hover){
+    grid-template-columns: 0.5fr 2fr 0.5fr 0.5fr;
+}
+.services-grid:has(.service-box:nth-child(3):hover){
+    grid-template-columns: 0.5fr 0.5fr 2fr 0.5fr;
+}
+.services-grid:has(.service-box:nth-child(4):hover){
+    grid-template-columns: 0.5fr 0.5fr 0.5fr 2fr;
+}
+
+.services-grid .service-box::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: calc(100% + 2px);
+    background: linear-gradient(#000, transparent, transparent, transparent, #000);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.insidebox{
+    border-radius: 10px;
+    padding: 2%;
+    width: 150px;
+    height: 100px;
+    transition: all 0.5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.service-box:hover .insidebox{
+    background:rgba(231, 231, 231, 0.5);
+    width: 300px;
+    height: 200px;
+    border: 1px solid black;
+}
+
+.insidebox h3 {
+    color: #181717;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.insidebox p {
+    color: #000000;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.service-box:hover p{
+    opacity: 1;
+}
+
+.toggle-btn, #backBtn {
+    background-color: #814B23;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.service-box:hover .toggle-btn, #backBtn{
+    opacity: 1;
+}
+
+.toggle-btn:hover,
+#backBtn:hover {
+    background-color: #302C21;
+    
+}
+
+.expanded-view {
+    display: none;
+    background: #DED6CB;
+    padding: 50px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 90%;
+    margin: auto;
+    transform: scale(0.8);
+    opacity: 0;
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+.expanded-view.active {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.expanded-content img {
+    width: 50%;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.expanded-content h3 {
+    font-size: 2rem;
+    color: #302C21;
+}
+
+.expanded-content p {
+    font-size: 1.2rem;
+    color: #302C21;
+    line-height: 1.6;
+}
+
+#backBtn {
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 768px) {
+
+    .services-grid {
+        display: flex !important; /* Force flex */
+        flex-direction: column !important; /* Stack vertically */
+        align-items: center; /* Center items */
+        gap: 10px; /* Add space */
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .service-box {
+        width: 90% !important; /* Make service boxes fit the screen */
+        max-width: 400px; /* Optional: Set a max width */
+    }
+
+    .insidebox{
+        background:rgba(231, 231, 231, 0.3);
+        border-radius: 10px;
+        padding: 2%;
+        border: 1px solid black;
+        width: 300px;
+        height: 200px;
+    }
+
+    .insidebox p {
+        font-size: 1rem;
+        margin-bottom: 15px;
+        opacity: 1;
+    }
+
+    .toggle-btn {
+        opacity: 1 !important;
+    }
+
+}
