@@ -75,12 +75,18 @@ nav a {
     display: flex;
     align-items: center;
     height: 100%;
+    transition: 0.5s;
 }
 
 nav a:hover {
-    transition: 1s;
     background-color: #f1f1f1;
     border-bottom: 1px solid #B0843F;
+    transform: translateY(-5px);
+}
+
+nav a:active{
+    transform: scale(1.1);
+    background:rgb(146, 103, 63);
 }
 
 nav li:first-child {
