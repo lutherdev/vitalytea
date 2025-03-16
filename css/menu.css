@@ -66,6 +66,7 @@
 }
 
 .itemss{
+    display: none;
     visibility: hidden;
     position: absolute;
     flex-wrap: wrap;
