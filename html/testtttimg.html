@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Vitaly Tea</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/services.css">
+    <link rel="stylesheet" href="../css/loading.css">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Ensures responsiveness */
+}
+
+.card {
+    position: relative;
+    width: 300px; /* Fixed size */
+    height: 300px; /* Fixed size */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image fills the container */
+}
+
+.text {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
+                 0 0 20px rgba(255, 255, 255, 0.6), 
+                 0 0 30px rgba(255, 255, 255, 0.4);
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <img src="/Picture/cappuccino.webp" alt="Print">
+            <p class="text">PRINT.</p>
+        </div>
+        <div class="card">
+            <img src="/Picture/cappuccino.webp" alt="Eat">
+            <p class="text">EAT.</p>
+        </div>
+        <div class="card">
+            <img src="/Picture/cappuccino.webp" alt="Relax">
+            <p class="text">RELAX.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -89,55 +89,55 @@ document.addEventListener("DOMContentLoaded", function () {
     const serviceData = {
         "digital-printing": {
             title: "Digital Printing",
-            img: "../Picture/Digital-Printing.png",
+            images: [
+                { src: "../Picture/Digital-Printing.png", text: "Glossy Print" },
+                { src: "../Picture/Digital-Printing.png", text: "Matte Print" },
+                { src: "../Picture/Digital-Printing.png", text: "Textured Print" }
+            ],
             desc: `<h3>Digital Printing</h3>
                    <h4>Paper Stock</h4>
                    <ul>
-                       <li><strong>Glossy:</strong> Provides a shiny, reflective finish, enhancing color vibrancy and contrast, making it perfect for high-resolution images and promotional materials.</li>
-                       <li><strong>Matte:</strong> Offers a non-reflective, smooth surface, reducing glare and fingerprints, ideal for text-heavy documents and professional reports.</li>
-                       <li><strong>Textured:</strong> Adds a unique, tactile feel to prints, giving a premium look suitable for invitations, artistic prints, and specialty projects.</li>
-                   </ul>
-                   <h4>Ink</h4>
-                   <p>Another important element of printing is ink. We guarantee that our ink does not run, smear, or blotch. 
-                      Unlike other digital printing presses, our ink does not stick to other printed pages, ensuring crisp, clean results.
-                   </p>
-                   <h4>Our Brands:</h4>
-                   <ul>
-                       <li><strong>Hewlett Packard (HP):</strong> Known for its rich color reproduction and long-lasting prints, HP ink is designed for both text clarity and image sharpness.</li>
-                       <li><strong>Epson:</strong> Features high-density pigments that resist fading, ensuring vibrant prints that stand the test of time.</li>
-                       <li><strong>Canon:</strong> Specially formulated for deep blacks and accurate color matching, making it perfect for professional and artistic prints.</li>
+                       <li><strong>Glossy:</strong> Provides a shiny, reflective finish, enhancing color vibrancy and contrast.</li>
+                       <li><strong>Matte:</strong> Offers a non-reflective, smooth surface, reducing glare.</li>
+                       <li><strong>Textured:</strong> Adds a unique, tactile feel, perfect for invitations.</li>
                    </ul>`
         },
         "binding": {
             title: "Binding",
-            img: "../Picture/Binding.jpeg",
+            images: [
+                { src: "../Picture/Binding.jpeg", text: "Saddle Stitch" },
+                { src: "../Picture/Binding.jpeg", text: "Heated Spine" },
+                { src: "../Picture/Binding.jpeg", text: "Wire Binding" }
+            ],
             desc: `<h3>Binding</h3>
-                   <p>Our professional binding services ensure that your documents are securely fastened and elegantly presented.</p>
-                   <h4>Saddle Stitch</h4>
-                   <p>Saddle stitch binding is a cost-effective method where folded sheets are stapled together along the spine. This is ideal for booklets, catalogs, and brochures with a lower page count.</p>
-                   <h4>Heated Spine</h4>
-                   <p>Heated spine binding, also known as perfect binding, uses strong adhesives to create a clean, professional look. This method is commonly used for softcover books, reports, and manuals.</p>
-                   <h4>Wire</h4>
-                   <p>Wire binding provides flexibility and durability, making it an excellent choice for notebooks, calendars, and corporate presentations. It allows documents to lay flat when opened.</p>`
+                   <p>Our professional binding services ensure that your documents are securely fastened.</p>`
         },
         "laminating": {
             title: "Laminating",
-            img: "../Picture/Laminating.jpg",
+            images: [
+                { src: "../Picture/Laminate1.jpg", text: "Glossy Lamination" },
+                { src: "../Picture/Laminate2.jpg", text: "Matte Lamination" },
+                { src: "../Picture/Laminate3.jpg", text: "Textured Lamination" }
+            ],
             desc: `<h3>Laminating</h3>
-                   <p>Protect and enhance your important documents with our high-quality laminating services, designed to increase longevity, improve appearance, and provide superior protection against daily wear and tear. Whether you need to preserve certificates, business documents, ID cards, or signage, our lamination process ensures they remain pristine, professional, and damage-resistant for years to come.</p>`
+                   <p>Protect and enhance your documents with high-quality lamination.</p>`
         },
         "cutting": {
             title: "Cutting",
-            img: "../Picture/Cutting.jpg",
+            images: [
+                { src: "../Picture/Cut1.jpg", text: "Precision Cutting" },
+                { src: "../Picture/Cut2.jpg", text: "Custom Shapes" },
+                { src: "../Picture/Cut3.jpg", text: "Bulk Cutting" }
+            ],
             desc: `<h3>Cutting</h3>
-                   <p>Our precision cutting services are designed to meet your specific needs with accuracy and efficiency. Whether you're working with business cards, brochures, posters, or custom-shaped prints, our advanced cutting technology ensures clean, sharp edges for a professional finish. Every cut is made with meticulous attention to detail, maintaining consistency and quality across all materials.</p>`
+                   <p>Our precision cutting services ensure clean, sharp edges.</p>`
         }
     };
 
     const servicesGrid = document.getElementById("servicesGrid");
     const expandedView = document.getElementById("expandedView");
     const expandedTitle = document.getElementById("expandedTitle");
-    const expandedImage = document.getElementById("expandedImage");
+    const expandedImagesContainer = document.getElementById("expandedImagesContainer");
     const expandedText = document.getElementById("expandedText");
     const backBtn = document.getElementById("backBtn");
 
@@ -147,14 +147,33 @@ document.addEventListener("DOMContentLoaded", function () {
             const serviceInfo = serviceData[serviceKey];
 
             expandedTitle.textContent = serviceInfo.title;
-            expandedImage.src = serviceInfo.img;
             expandedText.innerHTML = serviceInfo.desc;
+
+            // Clear previous images
+            expandedImagesContainer.innerHTML = "";
+
+            // Populate images dynamically
+            serviceInfo.images.forEach(img => {
+                const card = document.createElement("div");
+                card.classList.add("card");
+
+                const image = document.createElement("img");
+                image.src = img.src;
+                image.alt = img.text;
+
+                const text = document.createElement("p");
+                text.classList.add("text5");
+                text.textContent = img.text;
+
+                card.appendChild(image);
+                card.appendChild(text);
+                expandedImagesContainer.appendChild(card);
+            });
 
             servicesGrid.style.opacity = "0";
 
             setTimeout(() => {
                 servicesGrid.style.display = "none";
-
                 expandedView.style.display = "block";
                 setTimeout(() => {
                     expandedView.classList.add("active");
@@ -176,6 +195,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 500);
     });
 });
+
 
 //loading screen
 document.addEventListener("DOMContentLoaded", function () {
