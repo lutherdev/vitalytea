@@ -1,7 +1,16 @@
+#menumain{
+    
+}
+
 .menu {
     text-align: center;
-    padding: 40px;
     background: #fdf7ea;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 5%;
 }
 
 .menu h1 {
@@ -10,11 +19,69 @@
     color: #333;
 }
 
+#selections{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 50%;
+    margin: auto;
+}
+
+
+#selections button{
+    width: 100%;
+    background: transparent;
+    color: rgb(0, 0, 0);
+    border: 1px solid rgb(32, 31, 31);
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#selections button:hover{
+    transform: translateY(-10px);
+}
+
+#selections button:active{
+    font-size: 2rem;
+}
+
+.menuchoice{
+    padding: 3%;
+    
+}
 .menu-grid {
     display: flex;
     justify-content: center;
-    gap: 20px;
     flex-wrap: wrap;
+    gap: 20px;
+    border: 1px solid black;
+    width: 80%;
+    border-radius: 10px;
+    padding: 5%;
+    height: 100%;
+}
+
+.itemss{
+    visibility: hidden;
+    position: absolute;
+    flex-wrap: wrap;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: opacity 0.5s ease 0.2s;
+    height: 100%;
+    gap: 5px;
+}
+
+.itemss.active{
+    visibility: visible;
+    position: relative;
+    display: flex;
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .menu-item {
@@ -28,17 +95,20 @@
     overflow: hidden;/*remove2 to see the happenings*/
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
     display: flex;
+    border: 1px solid black;
+    
 }
 
 .menu-item img {
     width: 100%;
     height: 180px;
     object-fit: cover;
-    border-radius: 15px;
+    border-radius: 14% 86% 18% 82% / 40% 49% 51% 60%;
     display: block;
 }
 
 .menu-item:hover {
+    border: 1px solid rgb(255, 123, 0);
     transform: translateY(-10px);
 }
 
@@ -196,23 +266,26 @@
 @media (max-width: 768px) {
     .menu-grid {
         flex-direction: column;
-        gap: 0.5rem;
+        justify-self: center;
         align-items: center;
     }
 
+    .itemss{
+        height: 100%;
+    }
     .menu-item{
         width: 100%;    
         flex-direction: row;   
     }
 
     .menu-item img{
-        
+        height: 100%;
         width: 50%;
     }
     .overlay{
         width: 50%;
         background: none;
-        height: 0%;
+        height: 100%;
         position: relative;
         
     }

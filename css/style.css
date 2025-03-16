@@ -109,20 +109,21 @@ nav li:first-child {
     justify-content: flex-start;
     height: 80vh;
     padding-left: 5%;
- 
+    
 }
 
 .hero-text {
     max-width: 700px;
     color: rgb(253, 253, 253);
     text-align: left;
-  
+    
 }
 
 .hero-text h1 {
     font-size: 3rem;
     font-weight: 800;
     margin-bottom: 10px;
+    
 }
 
 .hero-text p {
@@ -130,9 +131,10 @@ nav li:first-child {
     font-weight: 400;
     margin-bottom: 20px;
     max-width: 570px;
+    
 }
 
-button {
+.hero-text button {
     background: transparent;
     color: rgb(0, 0, 0);
     border: 1px solid black;
@@ -308,6 +310,9 @@ footer {
     color: #B0843F;
 }
 
+.footer-container p{
+    color: white;
+}
 @media screen and (max-width: 768px) {
     .teams-container {
         flex-direction: column;
@@ -357,17 +362,33 @@ footer {
         background-position: center;
     }
 
+    main{
+        border: 1px solid red;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 5%;
+        width: 100%;
+        height: 1000000px; /*ayaw gumana ewan d tuloy maka scrol sa phone*/
+    }
     .container {
+        width: 100%;
+        height: 70%;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+        backdrop-filter: blur(3px);
         justify-content: center;
         text-align: center;
-        padding: 20px;
+        padding: 10%;
     }
 
     .hero-text {
-        background: rgba(255, 255, 255, 0.5);
-        padding: 15px;
+        border: 1px solid black;
+        padding: 5%;
         border-radius: 10px;
-        color: black;
+        color: rgb(17, 16, 16);
+        overflow: hidden;
     }
 
     .hero-text h1 {
@@ -395,4 +416,6 @@ footer {
     .sidebar {
         width: 100%;
     }
+
+
 }

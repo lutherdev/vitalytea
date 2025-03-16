@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - Vitaly Tea</title>
+    <title>Menu - Vitaly Tea</title>
+    <link rel="stylesheet" href="../css/menu.css">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/services.css">
     <link rel="stylesheet" href="../css/loading.css">
 </head>
 <body>
@@ -43,60 +43,30 @@
             <li class="menuButton" onclick="showSidebar()"><a href="#"><img src="../Picture/menu_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg" alt="menu"></a></li>
         </ul>
     </nav>
-    
-    <div id="servicemain">
-        <div class="container">
-            <div class="hero-text">
-                <h1>Our Services</h1>
-                <p>From professional printing services to a relaxing tea experience, we provide everything you need.</p>
+
+    <main>  
+        <section class="menu">
+            <h1>Menu</h1>
+            <div id="selections">
+                <a href="menu.html">WARM</a><hr><a href="cold.html">COLD</a><hr><a href="sandwiches.html">SANDWICHES</a>
             </div>
-        </div>
-        <section class="services-section">
-            <h2>Our Features & Services</h2>
-            <div class="services-grid" id="servicesGrid">
-                <div class="service-box" data-service="digital-printing" style="--img: url('../Picture/Digital-Printing.png');">
-                    <div class="insidebox">
-                    <h3>Digital Printing</h3>
-                    <p>High-quality prints on various paper stocks.</p>
-                    <button class="toggle-btn">More</button>
-                    </div>
-                </div>
+            <h2>Cold Drinks</h2>
+            <div class="menu-grid">
 
-                <div class="service-box" data-service="binding" style="--img: url('../Picture/Binding.jpeg');">
-                    <div class="insidebox">
-                    <h3>Binding</h3>
-                    <p>Secure and professional binding options.</p>
-                    <button class="toggle-btn">More</button> 
-                    </div>
-                </div>
-
-                <div class="service-box" data-service="laminating" style="--img: url('../Picture/Laminating.jpg');">
-                    <div class="insidebox">
-                    <h3>Laminating</h3>
-                    <p>Protect your documents with high-quality lamination.</p>
-                    <button class="toggle-btn">More</button>
-                    </div>
-                </div>
-
-                <div class="service-box" data-service="cutting" style="--img: url('../Picture/Cutting.jpg');">
-                    <div class="insidebox">
-                    <h3>Cutting</h3>
-                    <p>Precision cutting services for all your paper and printing needs.</p>
-                    <button class="toggle-btn">More</button>
-                    </div>
-                </div>
+                
             </div>
+        
+        </section>
 
-            <div class="expanded-view" id="expandedView">
-                <button id="backBtn">Back</button>
-                <div class="expanded-content">
-                    <h3 id="expandedTitle"></h3>
-                    <img id="expandedImage" src="" alt="">
-                    <p id="expandedText"></p>
-                </div>
+        <section class="cart-container" id="cart-container">
+            <div class="cart">
+                <h2>Order Summary</h2>
+                <ul id="cart-items"></ul>
+                <p>Total: ₱<span id="total">0.00</span></p>
+                <button onclick="checkout()">Checkout</button>
             </div>
         </section>
-    </div>
+</main>
 
     <footer>
         <div class="footer-container">
@@ -124,6 +94,5 @@
     </footer>
 
     <script src="../script.js"></script>
-
 </body>
 </html>

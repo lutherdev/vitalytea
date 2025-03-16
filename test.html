@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="test.css">
+    <style>
+        .menu {
+    display: flex;
+    gap: 10px;
+}
+
+.menu-btn {
+    padding: 10px 20px;
+    background-color: #814B23;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.menu-btn:hover {
+    background-color: #5c3620;
+}
+
+.menu-items {
+    border: 1px solid red;
+    position: relative;
+    width: 200px;
+    height: 100px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.items {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.items.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+    </style>
+</head>
+<body>
+
+<div class="menu">
+    <button class="menu-btn" data-category="coffee">Coffee</button>
+    <button class="menu-btn" data-category="tea">Tea</button>
+    <button class="menu-btn" data-category="juice">Juice</button>
+</div>
+
+<div class="menu-items">
+    <div class="items" id="coffee">
+        <p>Espresso</p>
+        <p>Latte</p>
+        <p>Cappuccino</p>
+    </div>
+
+    <div class="items" id="tea">
+        <p>Green Tea</p>
+        <p>Black Tea</p>
+        <p>Oolong Tea</p>
+    </div>
+
+    <div class="items" id="juice">
+        <p>Orange Juice</p>
+        <p>Apple Juice</p>
+        <p>Mango Juice</p>
+    </div>
+</div>
+
+<script>
+    document.querySelectorAll(".menu-btn").forEach(button => {
+        button.addEventListener("click", function() {
+            let category = this.getAttribute("data-category");
+
+            document.querySelectorAll(".items").forEach(item => {
+                if (item.id === category) {
+                    item.classList.add("active");
+                } else {
+                    item.classList.remove("active");
+                }
+            });
+        });
+    });
+    </script>
+</body>
+</html>
