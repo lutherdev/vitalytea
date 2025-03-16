@@ -68,7 +68,7 @@ body{
     border-radius: 10px;
     padding: 5%;
     height: 100%;
-    overflow: hidden;
+    overflow: scroll;
 }
 
 .itemss{
