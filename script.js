@@ -31,21 +31,133 @@ window.addEventListener('DOMContentLoaded', highlightActiveLink);
 // Menu and Cart Functionality
 let cart = [];
 
-function addToCart(item, price) {
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("paperStock").addEventListener("change", updateLivePrice);
+    document.getElementById("inkBrand").addEventListener("change", updateLivePrice);
+    document.getElementById("numPages").addEventListener("input", updateLivePrice);
+    document.getElementById("bindingType").addEventListener("change", updateBindingPrice);
+});
+
+//Digital Printing Live Price Update
+function updateLivePrice() {
+    let paperOption = document.querySelector("#paperStock option:checked");
+    let inkOption = document.querySelector("#inkBrand option:checked");
+    let numPages = parseInt(document.getElementById("numPages").value) || 1;
+
+    if (!paperOption || !inkOption || numPages < 1) {
+        document.getElementById("totalPrice").textContent = "₱0.00";
+        return;
+    }
+
+    let basePricePerPage = parseFloat(paperOption.getAttribute("data-price")) || 0;
+    let inkMultiplier = parseFloat(inkOption.getAttribute("data-multiplier")) || 1;
+    let finalPrice = basePricePerPage * inkMultiplier * numPages;
+
+    document.getElementById("totalPrice").textContent = `₱${finalPrice.toFixed(2)}`;
+}
+
+//Binding Service Live Price Update
+function updateBindingPrice() {
+    let bindingOption = document.querySelector("#bindingType option:checked");
+    
+    if (!bindingOption || bindingOption.value === "") {
+        document.getElementById("bindingPrice").textContent = "₱0.00";
+        return;
+    }
+
+    let price = parseFloat(bindingOption.getAttribute("data-price")) || 0;
+    document.getElementById("bindingPrice").textContent = `₱${price.toFixed(2)}`;
+}
+
+//Add to Cart Function
+function addToCart(item, price, category = "default") {
     let itemExists = false;
+
     for (let i = 0; i < cart.length; i++) {
-        if (cart[i].name === item) {
+        if (cart[i].name === item && cart[i].category === category) {
             cart[i].quantity++;
             itemExists = true;
             break;
         }
     }
+
     if (!itemExists) {
-        cart.push({ name: item, price: price, quantity: 1 });
+        cart.push({ name: item, price: price, quantity: 1, category: category });
     }
+
     updateCart();
 }
 
+//Digital Printing Service Function
+function addDigitalPrintingToCart() {
+    let paperStock = document.getElementById("paperStock").value;
+    let inkBrand = document.getElementById("inkBrand").value;
+    let numPages = parseInt(document.getElementById("numPages").value) || 1;
+    let paperOption = document.querySelector("#paperStock option:checked");
+    let inkOption = document.querySelector("#inkBrand option:checked");
+
+    if (!paperStock || !inkBrand || numPages < 1) {
+        alert("Please select paper type, ink brand, and enter a valid number of pages.");
+        return;
+    }
+
+    let basePricePerPage = parseFloat(paperOption.getAttribute("data-price"));
+    let inkMultiplier = parseFloat(inkOption.getAttribute("data-multiplier"));
+    let finalPrice = basePricePerPage * inkMultiplier * numPages;
+
+    let serviceName = `Printing (${paperStock} + ${inkBrand}) - ${numPages} pages`;
+
+    addToCart(serviceName, finalPrice, "service");
+}
+
+//Laminating Service Function
+function addLaminatingToCart() {
+    let fileInput = document.getElementById("laminateFile");
+
+    if (!fileInput.files.length) {
+        alert("Please upload a file for laminating.");
+        return;
+    }
+
+    let serviceName = "Laminating Service";
+    let price = 50.00; // Fixed price
+
+    addToCart(serviceName, price, "service");
+}
+
+//Binding Service Function
+function addBindingToCart() {
+    let bindingType = document.getElementById("bindingType").value;
+    let bindingOption = document.querySelector("#bindingType option:checked");
+    let fileInput = document.getElementById("bindingFile");
+
+    if (!bindingType || !fileInput.files.length) {
+        alert("Please select a binding type and upload a file.");
+        return;
+    }
+
+    let price = parseFloat(bindingOption.getAttribute("data-price"));
+    let serviceName = `Binding (${bindingType})`;
+
+    addToCart(serviceName, price, "service");
+}
+
+//Cutting Service Function
+function addCuttingToCart() {
+    let fileInput = document.getElementById("cuttingFile");
+
+    if (!fileInput.files.length) {
+        alert("Please upload a file for cutting.");
+        return;
+    }
+
+    let serviceName = "Cutting Service";
+    let price = 5.00; // Fixed price
+
+    addToCart(serviceName, price, "service");
+}
+
+//Remove Item from Cart
 function removeFromCart(index) {
     if (cart[index].quantity > 1) {
         cart[index].quantity--;
@@ -55,6 +167,7 @@ function removeFromCart(index) {
     updateCart();
 }
 
+// Update Cart Display
 function updateCart() {
     let cartList = document.getElementById("cart-items");
     let totalElement = document.getElementById("total");
@@ -66,23 +179,22 @@ function updateCart() {
     cart.forEach((item, index) => {
         total += item.price * item.quantity;
         let li = document.createElement("li");
-        li.innerHTML = `${item.name} (x${item.quantity}) - ₱${(item.price * item.quantity).toFixed(2)} 
-                            <button class="remove-btn" onclick="removeFromCart(${index})">×</button>`;
+        li.innerHTML = `${item.name} (x${item.quantity}) - ₱${(item.price * item.quantity).toFixed(2)}
+                        <button class="remove-btn" onclick="removeFromCart(${index})">×</button>`;
         cartList.appendChild(li);
     });
 
     totalElement.textContent = total.toFixed(2);
-
     cartContainer.style.display = cart.length > 0 ? "block" : "none";
 }
 
+// ✅ Checkout Function
 function checkout() {
-    // Store the cart data in localStorage
     localStorage.setItem('cart', JSON.stringify(cart));
-
-    // Redirect to order.html
     window.location.href = '../html/order.html';
 }
+
+
 
 // Services Section Functionality
 document.addEventListener("DOMContentLoaded", function () {

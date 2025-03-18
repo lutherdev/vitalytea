@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Vitaly Tea</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/navfoot.css">
+
     <link rel="stylesheet" href="../css/contact.css">
     <link rel="stylesheet" href="../css/loading.css">
 </head>
@@ -24,24 +25,28 @@
     </div>
     <nav>
         <ul class="sidebar">
-            <li onclick="hideSidebar()"><a href="#"><img src="../Picture/close_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg" alt="close"></a></li>
+            <li onclick="hideSidebar()"><a href="#">✖</a></li>
             <li><a href="../index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="menu.html">Menu</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="order.html">Order</a></li>
+            
+            <li><a href="../html/services.html">Services</a></li>
+            <li><a href="../html/menu.html">Menu</a></li>
+            <li><a href="../html/order.html">Order</a></li>
+            <li><a href="../html/about.html">About</a></li>
+            <li><a href="../html/contact.html">Contact</a></li>
+            <li><a href="../html/credits.html">Credits</a></li>
         </ul>
     
         <ul>
-            <li><a href="#">Vitaly Tea</a></li>
+            <li><a><img src="/Picture/Logo.png" alt=""></a></li>
             <li class="hideOnMobile"><a href="../index.html">Home</a></li>
-            <li class="hideOnMobile"><a href="about.html">About</a></li>
-            <li class="hideOnMobile"><a href="services.html">Services</a></li>
-            <li class="hideOnMobile"><a href="menu.html">Menu</a></li>
-            <li class="hideOnMobile"><a href="contact.html">Contact</a></li>
-            <li class="hideOnMobile"><a href="order.html">Order</a></li>
-            <li class="menuButton" onclick="showSidebar()"><a href="#"><img src="../Picture/menu_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg" alt="menu"></a></li>
+            
+            <li class="hideOnMobile"><a href="../html/services.html">Services</a></li>
+            <li class="hideOnMobile"><a href="../html/menu.html">Menu</a></li>
+            <li class="hideOnMobile"><a href="../html/order.html">Order</a></li>
+            <li class="hideOnMobile"><a href="../html/about.html">About</a></li>
+            <li class="hideOnMobile"><a href="../html/contact.html">Contact</a></li>
+            <li class="hideOnMobile"><a href="../html/credits.html">Credits</a></li>
+            <li class="menuButton" onclick="showSidebar()"><a href="#">☰</a></li>
         </ul>
     </nav>
 
@@ -49,14 +54,14 @@
         
         <div id="contactDetails">
             <div id="contactContainer">
-                <h1>Contact Us</h1>
+                <h1><span>Contact Us</span></h1>
                 <p>We’d love to hear from you! Reach out to us through any of the following methods:</p>
-                <p><strong>Email:</strong> vitality@gmail.com</p>
-                <p><strong>Phone:</strong> +63 9123 456 789</p>
-                <p><strong>Address:</strong> España, Manila</p>
+                <p><strong>Email:</strong> <span>vitality@gmail.com</span></p>
+                <p><strong>Phone:</strong> <span>+63 9123 456 789</span></p>
+                <p><strong>Address:</strong> <span>Padre Paredes St, Sampaloc, Manila, 1015 Metro Manila</span></p>
             </div>
-            <h2>Find Us on the Map</h2>
-            <h1>MAIN BRANCH</h1>
+            <h2><span>Find Us on the Map</span></h2>
+           
             <div id = "map">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.7811427000713!2d120.99175617555555!3d14.614977677267324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b7b700026a3f%3A0x634fa8f78d666013!2sVitaly%20Tea!5e0!3m2!1sen!2sph!4v1702057668926!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
@@ -64,16 +69,16 @@
         <div id="inquiry">
             
             <form onsubmit="return validateForm()">
-                <h2>Inquiry Form</h2>
+                <h2><span>Inquiry Form</span></h2>
                 <div id="personInp">
                     <div id="inp1">
-                        <input type="text" id="name" placeholder="NAME" name="name" required>
+                        <input type="text" id="name" placeholder="John Doe" name="name" required>
                     </div>
                     <div id="inp2">
-                        <input type="email" id="email" placeholder="EMAIL" name="email" required>
+                        <input type="email" id="email" placeholder="Johndoe@gmail.com" name="email" required>
                     </div>
                 </div>
-                    <textarea id="message" name="message" placeholder="MESSAGE" rows="4" required></textarea>
+                    <textarea id="message" name="message" placeholder="I'd like to know more about this company!" rows="4" required></textarea>
                 <button type="submit">Submit Inquiry</button>
             </form>
             
@@ -82,7 +87,7 @@
 
     <footer>
         <div class="footer-container">
-            <div class="box logo">
+            <div class="box">
                 <img src="../Picture/Logo.png" alt="">
             </div>
             <div class="box about">

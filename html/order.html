@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order - Vitaly Tea</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/navfoot.css">
+    
     <link rel="stylesheet" href="../css/order.css">
     <link rel="stylesheet" href="../css/loading.css">
 </head>
@@ -23,56 +24,56 @@
     </div>
     <nav>
         <ul class="sidebar">
-            <li onclick="hideSidebar()"><a href="#"><img src="../Picture/close_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg" alt="close"></a></li>
+            <li onclick="hideSidebar()"><a href="#">✖</a></li>
             <li><a href="../index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="menu.html">Menu</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="order.html">Order</a></li>
+            
+            <li><a href="../html/services.html">Services</a></li>
+            <li><a href="../html/menu.html">Menu</a></li>
+            <li><a href="../html/order.html">Order</a></li>
+            <li><a href="../html/about.html">About</a></li>
+            <li><a href="../html/contact.html">Contact</a></li>
+            <li><a href="../html/credits.html">Credits</a></li>
         </ul>
     
         <ul>
-            <li><a href="#">Vitaly Tea</a></li>
+            <li><a><img src="/Picture/Logo.png" alt=""></a></li>
             <li class="hideOnMobile"><a href="../index.html">Home</a></li>
-            <li class="hideOnMobile"><a href="about.html">About</a></li>
-            <li class="hideOnMobile"><a href="services.html">Services</a></li>
-            <li class="hideOnMobile"><a href="menu.html">Menu</a></li>
-            <li class="hideOnMobile"><a href="contact.html">Contact</a></li>
-            <li class="hideOnMobile"><a href="order.html">Order</a></li>
-            <li class="menuButton" onclick="showSidebar()"><a href="#"><img src="../Picture/menu_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg" alt="menu"></a></li>
+            
+            <li class="hideOnMobile"><a href="../html/services.html">Services</a></li>
+            <li class="hideOnMobile"><a href="../html/menu.html">Menu</a></li>
+            <li class="hideOnMobile"><a href="../html/order.html">Order</a></li>
+            <li class="hideOnMobile"><a href="../html/about.html">About</a></li>
+            <li class="hideOnMobile"><a href="../html/contact.html">Contact</a></li>
+            <li class="hideOnMobile"><a href="../html/credits.html">Credits</a></li>
+            <li class="menuButton" onclick="showSidebar()"><a href="#">☰</a></li>
         </ul>
     </nav>
-
     <main>
         <section class="order-summary">
             <h2>Order Details</h2>
             <ul id="order-items">
-
-
-            </ul>
+                </ul>
             <p>Total: ₱<span id="order-total">0.00</span></p>
+        </section>
 
-            <form class="customer-form" id="customer-info-form">
-                <h2>Customer Information</h2>
-                <div class="form-group">
-                    <label for="name">Full Name:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone Number:</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-                <div class="form-group">
-                    <label for="address">Address:</label>
-                    <input type="text" id="address" name="address" required>
-                </div>
-                <div class="form-group">
-                    <label for="cash">Cash Payment:</label>
-                    <input type="number" id="cash" name="cash" required min="0">
-                </div>
-            </form>
-
+        <section class="customer-form">
+            <h2>Customer Information</h2>
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+            <div class="form-group">
+                <label for="cash">Cash Payment:</label>
+                <input type="number" id="cash" name="cash" required min="0">
+            </div>
             <button onclick="confirmOrder()">Confirm Order</button>
         </section>
 
@@ -101,7 +102,7 @@
 
     <footer>
         <div class="footer-container">
-            <div class="box logo">
+            <div class="box">
                 <img src="../Picture/Logo.png" alt="">
             </div>
             <div class="box about">
@@ -121,7 +122,7 @@
                 <p>España, Manila</p>
             </div>
         </div>
-        <p class="footer-copy">&copy; 2025 Vitaly Tea. All rights reserved.</p>
+        <p style="color: white;">&copy; 2025 Vitaly Tea. All rights reserved.</p>
     </footer>
     
     <script src="../order.js"></script>

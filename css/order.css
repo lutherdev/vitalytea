@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 
 button {
     padding: 10px 20px;
@@ -12,20 +14,6 @@ button:hover {
     background-color: #45a049;
 }
 
-.order-summary {
-    padding: 20px;
-    margin: auto;
-    margin-top: 25px;
-    align-items: center;
-    width: 90%;
-    max-width: 500px;
-    background: rgba(255, 255, 255, 0.5);
-    border: 1px solid rgb(0, 0, 0);
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    margin-bottom: 40px;
-}
 
 .order-summary h1, .order-summary h2 {
     margin-bottom: 20px;
@@ -62,7 +50,6 @@ button:hover {
     padding: 5%;
     border: 1px solid black;
     border-radius: 10px;
-    background: url(/Picture/warm1.jpg);
     backdrop-filter: blur(10px);
 }
 
@@ -127,4 +114,41 @@ button:hover {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+.order-summary, .customer-form {
+    padding: 20px;
+    margin: 25px auto; /* Added top margin for spacing */
+    width: 90%;
+    max-width: 500px;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.customer-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+
+.customer-form button {
+    width: 100%; /* Make button full width */
+    padding: 12px 20px;
+    margin-top: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+}
+
+.customer-form button:hover {
+    background-color: #45a049;
 }

@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu - Vitaly Tea</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <title>Menu - Vitaly Tsea</title>
+    <link rel="stylesheet" href="../css/navfoot.css">
+    
     <link rel="stylesheet" href="../css/menu.css">
     <link rel="stylesheet" href="../css/loading.css">
 </head>
@@ -23,34 +24,40 @@
     </div>
     <nav>
         <ul class="sidebar">
-            <li onclick="hideSidebar()"><a href="#"><img src="../Picture/close_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg" alt="close"></a></li>
+            <li onclick="hideSidebar()"><a href="#">✖</a></li>
             <li><a href="../index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="menu.html">Menu</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="order.html">Order</a></li>
+            
+            <li><a href="../html/services.html">Services</a></li>
+            <li><a href="../html/menu.html">Menu</a></li>
+            <li><a href="../html/order.html">Order</a></li>
+            <li><a href="../html/about.html">About</a></li>
+            <li><a href="../html/contact.html">Contact</a></li>
+            <li><a href="../html/credits.html">Credits</a></li>
         </ul>
     
         <ul>
-            <li><a href="#">Vitaly Tea</a></li>
+            <li><a><img src="/Picture/Logo.png" alt=""></a></li>
             <li class="hideOnMobile"><a href="../index.html">Home</a></li>
-            <li class="hideOnMobile"><a href="about.html">About</a></li>
-            <li class="hideOnMobile"><a href="services.html">Services</a></li>
-            <li class="hideOnMobile"><a href="menu.html">Menu</a></li>
-            <li class="hideOnMobile"><a href="contact.html">Contact</a></li>
-            <li class="hideOnMobile"><a href="order.html">Order</a></li>
-            <li class="menuButton" onclick="showSidebar()"><a href="#"><img src="../Picture/menu_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg" alt="menu"></a></li>
+            
+            <li class="hideOnMobile"><a href="../html/services.html">Services</a></li>
+            <li class="hideOnMobile"><a href="../html/menu.html">Menu</a></li>
+            <li class="hideOnMobile"><a href="../html/order.html">Order</a></li>
+            <li class="hideOnMobile"><a href="../html/about.html">About</a></li>
+            <li class="hideOnMobile"><a href="../html/contact.html">Contact</a></li>
+            <li class="hideOnMobile"><a href="../html/credits.html">Credits</a></li>
+            <li class="menuButton" onclick="showSidebar()"><a href="#">☰</a></li>
         </ul>
     </nav>
 
     <div id="menumain">  
+
         <section class="menu">
             <h1>Menu</h1>
             <div id="selections">
-                <button class="menu-btn" data-category="Warm Drinks">WARM</button><hr>
-                <button class="menu-btn" data-category="Cold Drinks">COLD</button><hr>
-                <button class="menu-btn" data-category="Sandwiches">SANDWICHES</button>
+                <button class="menu-btn" data-category="Warm Drinks">Warm</button><hr>
+                <button class="menu-btn" data-category="Cold Drinks">Cold</button><hr>
+                <button class="menu-btn" data-category="Sandwiches">Sandwiches</button><hr>
+                <button class="menu-btn" data-category="Services">Services</button>
             </div>
             <div class="menuchoice">
                 <h2>Warm Drinks</h2>
@@ -181,7 +188,7 @@
                     <div class="menu-item">
                         <img src="../Picture/ham-cheese.jpg" alt="Ham & Cheese">
                         <div class="overlay">
-                            <h2>Ham & Cheese</h2>
+                            <h3>Ham & Cheese</h3>
                             <p>A refreshing blend of green tea & honey</p>
                             <p class="price">₱100</p>
                             <button onclick="addToCart('Ham & Cheese', 100)">Add to Cart</button>
@@ -190,7 +197,7 @@
                     <div class="menu-item">
                         <img src="../Picture/egg-salad.jpg" alt="Egg Salad">
                         <div class="overlay">
-                            <h2>Ham & Cheese</h2>
+                            <h3>Ham & Cheese</h3>
                             <p>A refreshing blend of green tea & honey</p>
                             <p class="price">₱100</p>
                             <button onclick="addToCart('Egg Salad', 100)">Add to Cart</button>
@@ -199,7 +206,7 @@
                     <div class="menu-item">
                         <img src="../Picture/tuna-sandwich.jpg" alt="Tuna Sandwich">
                         <div class="overlay">
-                            <h2>Ham & Cheese</h2>
+                            <h3>Ham & Cheese</h3>
                             <p>A refreshing blend of green tea & honey</p>
                             <p class="price">₱100</p>
                             <button onclick="addToCart('Tuna Sandwich', 100)">Add to Cart</button>
@@ -208,7 +215,7 @@
                     <div class="menu-item">
                         <img src="../Picture/chicken-sandwich.jpg" alt="Chicken Sandwich">
                         <div class="overlay">
-                            <h2>Ham & Cheese</h2>
+                            <h3>Ham & Cheese</h3>
                             <p>A refreshing blend of green tea & honey</p>
                             <p class="price">₱100</p>
                             <button onclick="addToCart('Chicken Sandwich', 100)">Add to Cart</button>
@@ -217,7 +224,7 @@
                     <div class="menu-item">
                         <img src="../Picture/grilled-cheese.jpg" alt="Grilled Cheese">
                         <div class="overlay">
-                            <h2>Ham & Cheese</h2>
+                            <h3>Ham & Cheese</h3>
                             <p>A refreshing blend of green tea & honey</p>
                             <p class="price">₱100</p>
                             <button onclick="addToCart('Grilled Cheese', 100)">Add to Cart</button>
@@ -226,7 +233,7 @@
                     <div class="menu-item">
                         <img src="../Picture/blt.jpg" alt="BLT">
                         <div class="overlay">
-                            <h2>Ham & Cheese</h2>
+                            <h3>Ham & Cheese</h3>
                             <p>A refreshing blend of green tea & honey</p>
                             <p class="price">₱100</p>
                             <button onclick="addToCart('BLT', 100)">Add to Cart</button>
@@ -235,7 +242,7 @@
                     <div class="menu-item">
                         <img src="../Picture/turkey-club.jpg" alt="Turkey Club">
                         <div class="overlay">
-                            <h2>Ham & Cheese</h2>
+                            <h3>Ham & Cheese</h3>
                             <p>A refreshing blend of green tea & honey</p>
                             <p class="price">₱100</p>
                             <button onclick="addToCart('Turkey Club', 100)">Add to Cart</button>
@@ -244,7 +251,7 @@
                     <div class="menu-item">
                         <img src="../Picture/beef-pastrami.jpg" alt="Beef Pastrami">
                         <div class="overlay">
-                            <h2>Ham & Cheese</h2>
+                            <h3>Ham & Cheese</h3>
                             <p>A refreshing blend of green tea & honey</p>
                             <p class="price">₱100</p>
                             <button onclick="addToCart('Beef Pastrami', 100)">Add to Cart</button>
@@ -253,7 +260,7 @@
                     <div class="menu-item">
                         <img src="../Picture/philly-cheesesteak.jpg" alt="Philly Cheesesteak">
                         <div class="overlay">
-                            <h2>Ham & Cheese</h2>
+                            <h3>Ham & Cheese</h3>
                             <p>A refreshing blend of green tea & honey</p>
                             <p class="price">₱100</p>
                             <button onclick="addToCart('Philly Cheesesteak', 100)">Add to Cart</button>
@@ -262,16 +269,114 @@
                     <div class="menu-item">
                         <img src="../Picture/smoked-salmon.jpg" alt="Smoked Salmon">
                         <div class="overlay">
-                            <h2>Ham & Cheese</h2>
+                            <h3>Ham & Cheese</h3>
                             <p>A refreshing blend of green tea & honey</p>
                             <p class="price">₱100</p>
                             <button onclick="addToCart('Smoked Salmon', 100)">Add to Cart</button>
                         </div>
                     </div>
                 </div><!--SANDIWHICESS-->
-            </div><!--MENUUU GRID-->
-        
+                
+                <div class="itemss" id="Services"><!-- Services -->
+                    <!-- Digital Printing Order -->
+                    <div class="digital-printing">
+                        <h2>Digital Printing Order</h2>
+
+                        <div class="printing-container">
+                            <div class="column">
+                                <label for="paperStock">Choose Paper Type:</label>
+                                <select id="paperStock">
+                                    <option value="" disabled selected>Select Paper Type</option>
+                                    <option value="Glossy" data-price="2.50">Glossy Paper - ₱2.50 per page</option>
+                                    <option value="Matte" data-price="2.00">Matte Paper - ₱2.00 per page</option>
+                                    <option value="Textured" data-price="1.50">Textured Paper - ₱1.50 per page</option>
+                                </select>
+
+                                <label for="inkBrand">Choose Ink Brand:</label>
+                                <select id="inkBrand">
+                                    <option value="" disabled selected>Select Ink Brand</option>
+                                    <option value="Hewlett Packard" data-multiplier="1.0">Hewlett Packard</option>
+                                    <option value="Epson" data-multiplier="1.25">Epson (+25%)</option>
+                                    <option value="Canon" data-multiplier="1.5">Canon (+50%)</option>
+                                </select>
+                            </div>
+
+                            <div class="column">
+                                <label for="fileUpload">Upload File:</label>
+                                <input type="file" id="fileUpload">
+
+                                <label for="numPages">Number of Pages:</label>
+                                <input type="number" id="numPages" min="1" value="1">
+
+                                <p>Total Price: <span id="totalPrice">₱0.00</span></p>
+                                <button onclick="addDigitalPrintingToCart()">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Laminating Service -->
+                    <div class="digital-printing">
+                        <h2>Laminating Service</h2>
+
+                        <div class="printing-container">
+                            <div class="column">
+                                <label for="laminateFile">Upload File:</label>
+                                <input type="file" id="laminateFile">
+                            </div>
+
+                            <div class="column">
+                                <p>Total Price: <span id="laminatePrice">₱50.00</span></p>
+                                <button onclick="addLaminatingToCart()">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Binding Service -->
+                    <div class="digital-printing">
+                        <h2>Binding Service</h2>
+
+                        <div class="printing-container">
+                            <div class="column">
+                                <label for="bindingType">Choose Binding Type:</label>
+                                <select id="bindingType">
+                                    <option value="" disabled selected>Select Binding Type</option>
+                                    <option value="Saddle Stitch" data-price="25.00">Saddle Stitch - ₱25.00</option>
+                                    <option value="Heated Spine" data-price="30.00">Heated Spine - ₱30.00</option>
+                                    <option value="Wire" data-price="35.00">Wire - ₱35.00</option>
+                                </select>
+                            </div>
+
+                            <div class="column">
+                                <label for="bindingFile">Upload File:</label>
+                                <input type="file" id="bindingFile">
+
+                                <p>Total Price: <span id="bindingPrice">₱0.00</span></p>
+                                <button onclick="addBindingToCart()">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cutting Service -->
+                    <div class="digital-printing">
+                        <h2>Cutting Service</h2>
+
+                        <div class="printing-container">
+                            <div class="column">
+                                <label for="cuttingFile">Upload File:</label>
+                                <input type="file" id="cuttingFile">
+                            </div>
+
+                            <div class="column">
+                                <p>Total Price: <span id="cuttingPrice">₱5.00</span></p>
+                                <button onclick="addCuttingToCart()">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!--SERVICVES-->
+            </div><!--MENU-GRID-->
         </section>
+    </div> <!--MENU MAIN-->
+    
 
         <script>
             document.querySelectorAll(".menu-btn").forEach(button => {
@@ -304,7 +409,7 @@
 
     <footer>
         <div class="footer-container">
-            <div class="box logo">
+            <div class="box">
                 <img src="../Picture/Logo.png" alt="">
             </div>
             <div class="box about">
@@ -324,7 +429,7 @@
                 <p>España, Manila</p>
             </div>
         </div>
-        <p class="footer-copy">&copy; 2025 Vitaly Tea. All rights reserved.</p>
+        <p style="color: white;">&copy; 2025 Vitaly Tea. All rights reserved.</p>
     </footer>
 
     <script src="../script.js"></script>
