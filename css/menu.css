@@ -2,20 +2,23 @@ body{
     height: 100vh;
 }
 
-#menumain{
-  
-    height: 100vh;
+#menumain{ 
+    background: #fdf7ea;
+    height: 100%;
+    padding: 2%;
 }
 
 .menu {
     text-align: center;
-    background: #fdf7ea;
+   
+    border-radius: 10px;
     height: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    padding: 5%;
+    height: 100%;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-    padding-bottom: 5%;
 }
 
 .menu h1 {
@@ -24,14 +27,23 @@ body{
     color: #333;
 }
 
-#selections{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 50%;
-    margin: auto;
+.submenu{
+
+    width: 30%;
+    height: 100%;
 }
 
+#selections{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    
+}
+
+#selections h1{
+    border-bottom: 1px solid rgb(19, 18, 18);
+}
 
 #selections button{
     width: 100%;
@@ -59,24 +71,29 @@ body{
 }
 
 .menuchoice{
-    padding: 3%;
     color: #B0843F;
     text-shadow: 0.5px 0.5px black;
-    
+    width: 100%;
+    height: 100%;
+   
 }
+
+
 .menu-grid {
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
+    flex-direction: row;
     gap: 20px;
     border: 1px solid black;
     background-color: #f8f6f3;
     background-size: cover;
     background-position: center;
-    width: 80%;
+    width: 100%;
     border-radius: 10px;
     padding: 5%;
-    height: 100%;
+    height: 90%;
     overflow: scroll;
 }
 
@@ -89,6 +106,7 @@ body{
     opacity: 0;
     transition: opacity 0.5s ease 0.2s;
     gap: 5px;
+    
 }
 
 .itemss.active{
@@ -110,8 +128,9 @@ body{
     overflow: hidden;/*remove2 to see the happenings*/
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
     display: flex;
+    flex-direction: column;
     border: 1px solid black;
-    
+    height: 40%;
 }
 
 .menu-item img {
@@ -119,7 +138,12 @@ body{
     height: 180px;
     object-fit: cover;
     border-radius: 14% 86% 18% 82% / 40% 49% 51% 60%;
-    display: block;
+    
+}
+
+.menu-item span{
+    
+    
 }
 
 .menu-item:hover {
@@ -127,7 +151,13 @@ body{
     transform: translateY(-10px);
 }
 
+
+.menu-item:hover span{
+    transition: 0.5s;
+    opacity: 0;
+}
 .overlay{
+   
     width: 100%;
     height: 0;
     background: linear-gradient(transparent, #5a4231 100%);
@@ -189,15 +219,17 @@ body{
 }
 
 .cart-container {
-    display: none;
+    display: hidden;
     position: fixed;
     top: 60px;
     right: 20px;
     background: white;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
+    width: 320px;
     padding: 20px;
-    width: 250px;
+    transform: translateY(50px);
+    height: 300px;
 }
 
 .cart {
@@ -205,15 +237,13 @@ body{
     text-align: center;
 }
 
+.maincart{
+    overflow: scroll;
+    height: 150px;
+}
 .cart h2 {
     font-size: 18px;
     margin-bottom: 10px;
-}
-
-.cart-container {
-    width: 320px;
-    max-width: 100%;
-    padding: 20px;
 }
 
 
@@ -283,50 +313,15 @@ body{
     margin-bottom: 10px;
 }
 
-@media (max-width: 768px) {
-    
-    .menu-grid {
-        flex-direction: column;
-        justify-self: center;
-        align-items: center;
-    }
-
-    .itemss{
-        height: 100%;
-    }
-    .menu-item{
-        width: 100%;    
-        flex-direction: row;   
-        text-shadow: none;
-    }
-
-    .menu-item img{
-        height: 100%;
-        width: 50%;
-    }
-    .overlay{
-        width: 50%;
-        background: none;
-        height: 100%;
-        position: relative;
-        
-    }
-    .overlay h3, p{
-        color: black;
-        text-shadow: none;
-    }
-
-}
-
 .digital-printing {
     background: linear-gradient(transparent, #5a4231 100%);
+    background:rgba(61, 61, 61, 0.2);
     border-radius: 15px;
     padding: 30px;
     text-align: center;
     color: white;
     text-shadow: 1px 1px black;
-    width: 90%;
-    max-width: 1200px; /* Increased max-width for more space */
+    width: 100%;
     margin: auto;
     min-height: 400px; /* Increased height for better spacing */
 }
@@ -360,11 +355,13 @@ body{
     width: 100%;
     max-width: 1100px;
     margin: auto;
+    
 }
 
 .column {
+    
     flex: 1;
-    min-width: 320px; /* Increased width for better spacing */
+    min-width: 20%; /* Increased width for better spacing */
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -383,3 +380,85 @@ body{
 .digital-printing button:hover {
     background: #5a4231;
 }
+
+
+@media (max-width: 768px) {
+    
+    .menu-item span{
+        display: none;
+    }
+
+    .cart-container {
+        display: none;
+        position: fixed;
+        top: 60px;
+        right: 20px;
+        background: white;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        padding: 20px;
+        width: 250px;
+    }
+
+    .menu{
+        flex-direction: column; 
+    }
+
+    .menu-grid {
+        flex-direction: column;
+        justify-self: center;
+        align-items: center;
+        width: 100%;
+        height: 75%;
+        
+    }
+
+    #selections{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        
+    }
+
+    #selections h1{
+        display: none;
+    }
+
+    .itemss{
+        height: 100%;
+    }
+    .menu-item{
+        width: 100%;    
+        flex-direction: row;   
+        text-shadow: none;
+        height: 350px;
+        min-height: 200px;
+    }
+
+    .menu-item img{
+        height: 100%;
+        width: 50%;
+        border-radius: 10px;
+    }
+    .overlay{
+        width: 50%;
+        background: none;
+        height: 320px;
+        position: relative;
+        
+    }
+    .overlay h3, p{
+        color: black;
+        text-shadow: none;
+    }
+
+    .digital-printing{
+        width: 100%;
+    }
+
+    .printing-container {
+        flex-direction: column;
+    }
+
+}
+

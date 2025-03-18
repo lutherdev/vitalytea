@@ -148,8 +148,10 @@ form textarea::placeholder{
 }
 
 button{
+    border-radius: 10px;
     flex-shrink: 1;
     background-color: #ff9800;
+    padding: 2%;
 }
 
 button:hover{

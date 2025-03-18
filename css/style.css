@@ -13,10 +13,9 @@
 }
 
 .hero-text {
-    max-width: 700px;
     color: rgb(253, 253, 253);
     text-align: left;
-    
+    width: 800px;
 }
 
 .hero-text h1 {
@@ -32,12 +31,12 @@
     font-size: 1.2rem;
     font-weight: 400;
     margin-bottom: 20px;
-    max-width: 570px;
+    max-width: 800px;
     
 }
 
 .hero-text button {
-    background: #B0843F;
+    background: transparent;
     color: rgb(255, 255, 255);
     border: 1px solid black;
     padding: 12px 24px;
@@ -49,8 +48,8 @@
 }
 
 .hero-text button:hover {
-    background-color: #5a4231;
-    color: #B0843F;
+    background-color: #e77523;
+    color: #ffffff;
   
 }
 

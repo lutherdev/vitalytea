@@ -194,8 +194,6 @@ function checkout() {
     window.location.href = '../html/order.html';
 }
 
-
-
 // Services Section Functionality
 document.addEventListener("DOMContentLoaded", function () {
     const serviceData = {

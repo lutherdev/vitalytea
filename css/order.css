@@ -1,6 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 
+main{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    padding: 2%;
+}
+
 button {
     padding: 10px 20px;
     background-color: #4CAF50;
@@ -118,7 +126,6 @@ button:hover {
 
 .order-summary, .customer-form {
     padding: 20px;
-    margin: 25px auto; /* Added top margin for spacing */
     width: 90%;
     max-width: 500px;
     background: rgba(255, 255, 255, 0.5);
@@ -126,6 +133,10 @@ button:hover {
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     text-align: center;
+}
+
+.order-summary #order-items{
+    min-height: 80%;
 }
 
 .customer-form input {
@@ -151,4 +162,16 @@ button:hover {
 
 .customer-form button:hover {
     background-color: #45a049;
+}
+
+@media (max-width: 756px){
+    main{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .order-summary #order-items{
+        min-height: 0%;
+    }
 }
