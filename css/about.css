@@ -48,8 +48,16 @@
     align-items: center;
     width: 100%;
     padding: 1% 5% 5% 5%;
-    
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
+
+.about-content.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
 
 .cardimg, .cardimg2 {
     flex-grow: 1;
@@ -184,13 +192,17 @@
 
     .cardimg, .cardimg2{
         width: 100%;
+        height: auto;
     }
     .cardtext, .cardtext2{
         width: 100%;
         font-size: 0.8rem;
+        height: 350px;
     }
 
     .cardimg img, .cardimg2 img{
         border-radius: 10px;
+        width: 100%;
+        height: auto;
     }
 }
