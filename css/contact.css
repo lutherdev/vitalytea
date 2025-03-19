@@ -25,6 +25,7 @@
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
     color: rgb(255, 255, 255);
+    padding: 50px;
     
 }
 
@@ -35,7 +36,7 @@
     justify-content: center;
     
 }
-span {
+main span {
     color: #B0843F;
     border: none;
     text-shadow: 1px 1px 2px black;

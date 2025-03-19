@@ -58,7 +58,10 @@ nav {
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
     /*height: 60px;*/
 }
-
+ul img {
+    margin-left: 25px;
+    padding: 5px;
+}
 nav ul {
     width: 100%;
     display: flex;
@@ -207,7 +210,9 @@ footer {
     margin-bottom: 5px;
     color: #DED6CB;
 }
-
+.links li a:hover {
+    color: #B0843F;
+}
 .contact {
     flex: 1;
 }
@@ -250,7 +255,6 @@ footer {
 
     .box li a {
         font-size: 1.2em;
-        gap
     }
    .links {
         width: 100%;
@@ -259,10 +263,6 @@ footer {
         gap: 50px;
     }
     /* end footer */
-
-    
-
-
 
     .about-content {
         flex-direction: column;
@@ -306,12 +306,31 @@ footer {
     .logo img {
         display: none;
     }
+
+    .sidebar a{
+       color: white;
+    }
+
+    span {
+        color:white;
+        border-bottom: 1px solid white;
+    }
+
+    /* Remove hover effects in mobile view */
+    nav a:hover {
+        background-color: unset;
+        transform: unset;
+        color: unset;
+    }
+
+    nav a:active {
+        transform: unset;
+        background: unset;
+    }
 }
 
 @media screen and (max-width: 400px) {
     .sidebar {
         width: 100%;
     }
-
-
 }

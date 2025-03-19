@@ -22,6 +22,14 @@ function displayOrderSummary() {
     orderTotal.textContent = total.toFixed(2);
 }
 
+function cancelOrder() {
+    // Clear the order items
+    document.getElementById('order-items').innerHTML = '';
+    // Reset the total
+    document.getElementById('order-total').textContent = '0.00';
+    alert('Order has been canceled.');
+}
+
 function confirmOrder() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     if (cart.length === 0) {

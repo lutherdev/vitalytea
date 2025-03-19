@@ -86,6 +86,13 @@ function addToCart(item, price, category = "default") {
     }
 
     updateCart();
+    showOrderSummary(); // Show the order summary when an item is added
+}
+
+function showOrderSummary() {
+    const orderSummary = document.querySelector('.order-summary');
+    orderSummary.style.display = 'block'; // Ensure the order summary is visible
+    orderSummary.scrollIntoView({ behavior: 'smooth' }); // Smoothly scroll to the order summary
 }
 
 //Digital Printing Service Function
@@ -172,6 +179,7 @@ function updateCart() {
     let cartList = document.getElementById("cart-items");
     let totalElement = document.getElementById("total");
     let cartContainer = document.getElementById("cart-container");
+    const orderSummary = document.querySelector('.order-summary');
 
     cartList.innerHTML = "";
     let total = 0;
@@ -186,60 +194,75 @@ function updateCart() {
 
     totalElement.textContent = total.toFixed(2);
     cartContainer.style.display = cart.length > 0 ? "block" : "none";
+
+    // Hide the order summary if the cart is empty
+    if (cart.length === 0) {
+        orderSummary.style.display = 'none';
+    }
 }
 
-// ✅ Checkout Function
+//Checkout Function
 function checkout() {
+    if (cart.length === 0) {
+        alert("Your cart is empty. Please add items before proceeding to checkout.");
+        return; // Prevent navigation if the cart is empty
+    }
+
     localStorage.setItem('cart', JSON.stringify(cart));
     window.location.href = '../html/order.html';
 }
-
 // Services Section Functionality
 document.addEventListener("DOMContentLoaded", function () {
     const serviceData = {
         "digital-printing": {
             title: "Digital Printing",
             images: [
-                { src: "../Picture/Digital-Printing.png", text: "Glossy Print" },
-                { src: "../Picture/Digital-Printing.png", text: "Matte Print" },
-                { src: "../Picture/Digital-Printing.png", text: "Textured Print" }
+                { src: "../Picture/Glossy_Print.jpg", text: "Glossy Print" },
+                { src: "../Picture/Matte_Print.jpg", text: "Matte Print" },
+                { src: "../Picture/Textured_Print.jpg", text: "Textured Print" },
+                { src: "../Picture/HP.png", text: "Hewlett Packard" },
+                { src: "../Picture/epson-logo.png", text: "Epson" },
+                { src: "../Picture/Canon-logo.png", text: "Canon" }
             ],
-            desc: `<h3>Digital Printing</h3>
+            desc: `
                    <h4>Paper Stock</h4>
                    <ul>
                        <li><strong>Glossy:</strong> Provides a shiny, reflective finish, enhancing color vibrancy and contrast.</li>
                        <li><strong>Matte:</strong> Offers a non-reflective, smooth surface, reducing glare.</li>
                        <li><strong>Textured:</strong> Adds a unique, tactile feel, perfect for invitations.</li>
-                   </ul>`
+                   </ul>
+                   <h4>Ink</h4>Another important element of printing  is  ink. We will guarantee that our ink does not run, smear, blotch. It also does not stick to other printed pages unlike the result in other digital printing presses.
+                   <h4>Our Brands:</h4>
+                   <ul>
+                       <li><strong>Hewlett Packard: </strong>Known for reliable, high-quality ink that delivers sharp text and vibrant colors, ideal for both home and office printing.</li>
+                       <li><strong>Epson: </strong>Features advanced pigment and dye-based inks designed for long-lasting prints with rich color depth, often used for photography and professional documents.</li>
+                       <li><strong>Canon: </strong>Offers specialized ink technology for crisp text and true-to-life colors, making it a favorite for photo printing and creative projects.</li>
+                   </ul>`      
         },
         "binding": {
             title: "Binding",
             images: [
-                { src: "../Picture/Binding.jpeg", text: "Saddle Stitch" },
-                { src: "../Picture/Binding.jpeg", text: "Heated Spine" },
-                { src: "../Picture/Binding.jpeg", text: "Wire Binding" }
+                { src: "../Picture/Saddle.jpg", text: "Saddle Stitch" },
+                { src: "../Picture/Heated_Spine.jpg", text: "Heated Spine" },
+                { src: "../Picture/wire.jpg", text: "Wire Binding" }
             ],
-            desc: `<h3>Binding</h3>
+            desc: `
                    <p>Our professional binding services ensure that your documents are securely fastened.</p>`
         },
         "laminating": {
             title: "Laminating",
             images: [
-                { src: "../Picture/Laminate1.jpg", text: "Glossy Lamination" },
-                { src: "../Picture/Laminate2.jpg", text: "Matte Lamination" },
-                { src: "../Picture/Laminate3.jpg", text: "Textured Lamination" }
+                { src: "../Picture/Laminating.jpg", text: "Lamination" },
             ],
-            desc: `<h3>Laminating</h3>
+            desc: `
                    <p>Protect and enhance your documents with high-quality lamination.</p>`
         },
         "cutting": {
             title: "Cutting",
             images: [
-                { src: "../Picture/Cut1.jpg", text: "Precision Cutting" },
-                { src: "../Picture/Cut2.jpg", text: "Custom Shapes" },
-                { src: "../Picture/Cut3.jpg", text: "Bulk Cutting" }
+                { src: "../Picture/Cutting.jpg", text: "Cutting" },
             ],
-            desc: `<h3>Cutting</h3>
+            desc: `
                    <p>Our precision cutting services ensure clean, sharp edges.</p>`
         }
     };

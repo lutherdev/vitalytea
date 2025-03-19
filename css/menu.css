@@ -5,12 +5,11 @@ body{
 #menumain{ 
     background: #fdf7ea;
     height: 100%;
-    padding: 2%;
+
 }
 
 .menu {
-    text-align: center;
-   
+    text-align: center; 
     border-radius: 10px;
     height: 100%;
     display: flex;
@@ -28,17 +27,22 @@ body{
 }
 
 .submenu{
-
     width: 30%;
     height: 100%;
+    margin-top: 20px; 
+    padding: 2%;
 }
 
 #selections{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 50%;
-    
+    align-items: center;
+    width: 100%;
+    gap: 10px; 
+    border: 2px solid #5a4231;
+    padding: 5%;
+    border-radius: 10px;
 }
 
 #selections h1{
@@ -75,7 +79,6 @@ body{
     text-shadow: 0.5px 0.5px black;
     width: 100%;
     height: 100%;
-   
 }
 
 
@@ -86,7 +89,7 @@ body{
     flex-wrap: wrap;
     flex-direction: row;
     gap: 20px;
-    border: 1px solid black;
+    border: 2px solid #5a4231;
     background-color: #f8f6f3;
     background-size: cover;
     background-position: center;
@@ -141,9 +144,9 @@ body{
     
 }
 
-.menu-item span{
-    
-    
+.cart-container {
+    display: none; /* Initially hidden */
+    transition: all 0.3s ease-in-out;
 }
 
 .menu-item:hover {
@@ -157,7 +160,6 @@ body{
     opacity: 0;
 }
 .overlay{
-   
     width: 100%;
     height: 0;
     background: linear-gradient(transparent, #5a4231 100%);
@@ -181,7 +183,6 @@ body{
     font-weight: 700;
     margin-bottom: 5px;
     margin-top: 80%;
-    font-family: bebas neue;
     font-size: 30px;
     letter-spacing: 2px;
     margin: 15px 0;
@@ -199,7 +200,7 @@ body{
     text-align: center;
     padding: 10px;
     transition: 0.3s;
-    
+    border-radius: 10px;
 }
 
 .overlay button:hover{
@@ -322,7 +323,7 @@ body{
     color: white;
     text-shadow: 1px 1px black;
     width: 100%;
-    margin: auto;
+    margin: 40px auto; /* Increased margin for better spacing */
     min-height: 400px; /* Increased height for better spacing */
 }
 
@@ -413,51 +414,93 @@ body{
         
     }
 
+    .submenu{
+
+    }
+
     #selections{
         display: flex;
         flex-direction: row;
-        width: 100%;
-        
+        width: 120%;
+        gap: 10px; /* Add space between buttons */
+        border: 0px;
     }
 
     #selections h1{
         display: none;
     }
 
+    #selections button{
+        width: 200px;
+    }
+    
     .itemss{
         height: 100%;
     }
     .menu-item{
         width: 100%;    
-        flex-direction: row;   
+        flex-direction: column;   
         text-shadow: none;
-        height: 350px;
+        height: auto;
         min-height: 200px;
     }
 
     .menu-item img{
-        height: 100%;
-        width: 50%;
+        height: auto;
+        width: 100%;
         border-radius: 10px;
     }
     .overlay{
-        width: 50%;
+        width: 100%;
         background: none;
-        height: 320px;
+        height: auto;
         position: relative;
+        padding: 10px 0;
         
     }
     .overlay h3, p{
         color: black;
         text-shadow: none;
+        margin: 10px 0;
     }
 
-    .digital-printing{
-        width: 100%;
+    .overlay button {
+        margin-top: 10px;
+    }
+
+    .digital-printing {
+        padding: 20px; 
+        font-size: 14px; 
+        text-align: center;
+    }
+
+    .digital-printing h2 {
+        font-size: 1.5rem; 
+        margin-bottom: 15px;
+    }
+
+    .digital-printing h3 {
+        font-size: 1.2rem; 
+        margin-bottom: 10px;
+    }
+
+    .digital-printing p {
+        max-width: 100%; 
     }
 
     .printing-container {
-        flex-direction: column;
+        flex-direction: column; 
+        gap: 20px; 
+    }
+
+    .column {
+        min-width: 100%; 
+        gap: 10px; 
+    }
+
+    .digital-printing button {
+        padding: 10px; 
+        font-size: 1rem; 
     }
 
 }

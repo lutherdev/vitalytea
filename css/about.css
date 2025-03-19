@@ -114,11 +114,15 @@
     text-align: center;
     border: 1px solid black;
     border-radius: 10px;
-    padding: 2%;
+    padding: 4%;
     background-image: url(../Picture/Background.png);
     background-size: cover;
+    color: #5a4231;
 }
 
+.about-teams h3{
+    padding-bottom: 1%;
+}
 .teams-container {
     display: flex;
     flex-wrap: wrap;
@@ -129,6 +133,7 @@
 
 .teams-person {
     background: rgba(255, 255, 255, 0.3); /* Semi-transparent */
+    backdrop-filter: blur(5px);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
@@ -136,7 +141,9 @@
     width: 300px;
     max-width: 100%;
     border: 1px solid white;
+    min-height: 350px;
 }
+
 
 .teams-person img {
     width: 100px;
@@ -149,10 +156,12 @@
 .teams-person h3 {
     margin: 10px 0;
     font-size: 1.2em;
+    color: #B0843F;
 }
 
 .teams-person p {
-    color: #666;
+    color: #0f0f0f;
+    font-weight: 500;
 }
 
 @media(max-width: 700px){
