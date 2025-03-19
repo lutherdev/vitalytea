@@ -7,6 +7,9 @@ main{
     justify-content: center;
     gap: 10px;
     padding: 2%;
+    background: #fdf7ea;
+    background-size: cover;
+    background-position: center;
 }
 
 button {
@@ -46,6 +49,11 @@ button:hover {
 
 .order-summary input:focus {
     border-color: #4CAF50;
+}
+
+.order-summary ul{
+    height: 100px;
+    overflow: scroll;
 }
 
 #confirmation-section {
@@ -145,9 +153,8 @@ button:hover {
 
 .order-summary, .customer-form {
     width: 80%;
-    max-width: 350px;
-    height: auto; /* Allow height to adjust naturally */
-    max-height: 400px; /* Limit max height */
+    max-width: 550px;
+    height: auto; 
     background: rgba(255, 255, 255, 0.7);
     border: 1px solid black;
     border-radius: 15px;

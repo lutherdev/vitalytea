@@ -5,6 +5,12 @@
 
 }
 
+main{
+    
+    background-size: cover;
+    background-position: center;
+}
+
 #contactMain{
     width: 100%;
     display: flex;

@@ -15,7 +15,7 @@
 }
 
 ::-webkit-scrollbar-track {
-    background: #f5f3f0; /* Nude background */
+    background: transparent; /* Nude background */
 }
 
 
