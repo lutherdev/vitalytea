@@ -180,14 +180,13 @@
     }
     .about-information{
         width: 100%;
-        
+        justify-content: center;
+        align-items: center;
     }
 
     .about-content {
-        width: 100%;
+        width: 80%;
         flex-direction: column;
-        
-        
     }
 
     .cardimg, .cardimg2{
@@ -196,8 +195,12 @@
     }
     .cardtext, .cardtext2{
         width: 100%;
-        font-size: 0.8rem;
-        height: 350px;
+        font-size: 0.6rem;
+        height: 250px;
+    }
+
+    .cardtext p, .cardtext2 p{
+
     }
 
     .cardimg img, .cardimg2 img{
